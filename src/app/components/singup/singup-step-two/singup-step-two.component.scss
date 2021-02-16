@@ -1,0 +1,62 @@
+@import "src/mixins";
+:host {
+    @include static-page();
+    @include inline-form();
+    
+    
+    .signup-2-form-wrapper {
+
+        #signup-2-form {
+            padding: 32px 15px;
+            text-align: center;
+
+            form {
+                width: 100%;
+
+                mat-form-field{
+                    width:100%;
+                    text-align: left;
+                }
+
+                mat-form-field.postal{
+                    width:30%;
+                    .mat-form-field-wrapper{
+                        border-radius: 0 !important;
+                        border-right-style: none !important;
+                    }
+
+                    .mat-form-field-outline-end {
+                        border-left-style: none;
+                        border-right-style: none;
+                        color: red;
+                    }
+                }
+                mat-form-field.city{
+                    width: 68%;
+                }
+                mat-form-field.country{
+                    width:68%;
+                }
+                mat-form-field.currency{
+                    width:100%;
+                }
+
+                .accept-terms{
+                    width: 100%;
+                }
+
+                .telephoneContainer{
+                    position: relative;
+
+                    .errorMsgTelephone{
+                        position: absolute;
+                        top: 57px;
+                    }
+                }
+
+                
+            }
+            @include form-buttons;
+        }
+    }
+}

@@ -1,0 +1,53 @@
+.stepper-wrapper {
+    height: 50px;
+
+    .number{
+        color: white;
+        font-size: 16px;
+        font-weight: 500;
+        display: none;
+    }
+
+    .icon{
+        display: none;
+        color: white;
+    }
+    .rectangle {
+        height: 7px;
+        width: 32px;
+        background-color: #A9D6D3;
+        z-index: 2;
+    }
+
+    .circle {
+        height: 24px;
+        width: 24px;
+        background-color: #A9D6D3;
+        border-radius: 50%;
+        z-index: 3;
+
+        &.selected{
+            background-color: #FFCB19;
+
+            .number{
+                display: block;
+            }
+        }
+
+        &.completed{
+            background-color: #55B8B1;
+            .icon{
+                display: block;
+            }
+        }
+        
+    }
+
+    >div{
+        margin-left:-2px;
+        &:first-child{
+            margin-left: 0px;
+        }
+    }
+
+}

@@ -1,0 +1,80 @@
+@import "src/mixins";
+:host {
+    @include static-page();
+    @include inline-form();
+
+    .step-body {
+        margin-top: 32px;
+
+        p {
+            margin-bottom: 0;
+        }
+
+        .step-teaser {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            text-align: center;
+            letter-spacing: 0.15px;
+            color: #070707;
+        }
+
+        .page-header {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            letter-spacing: 0.15px;
+            text-transform: capitalize;
+        }
+
+        .signup-2-form-wrapper {
+            #signup-2-form {
+                padding: 32px 15px;
+                text-align: center;
+
+                form {
+                    width: 100%;
+
+                    mat-form-field {
+                        width: 100%;
+                        text-align: left;
+                    }
+
+                    mat-form-field.postal {
+                        width: 30%;
+                        .mat-form-field-wrapper {
+                            border-radius: 0 !important;
+                            border-right-style: none !important;
+                        }
+
+                        .mat-form-field-outline-end {
+                            border-left-style: none;
+                            border-right-style: none;
+                            color: red;
+                        }
+                    }
+                    mat-form-field.city {
+                        width: 68%;
+                    }
+                    mat-form-field.ccode {
+                        width: 30%;
+                    }
+                    mat-form-field.telephone {
+                        width: 70%;
+                    }
+
+                    .telephoneContainer {
+                        position: relative;
+
+                        .errorMsgTelephone {
+                            position: absolute;
+                            top: 57px;
+                        }
+                    }
+                }
+                @include form-buttons;
+            }
+        }
+    }
+}

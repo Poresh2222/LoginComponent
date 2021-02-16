@@ -1,0 +1,136 @@
+$main: #20716b;
+$yellow: #ffd36c;
+$pink: #fc3c6a;
+
+@mixin typography() {
+  .category-header {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    text-transform: capitalize;
+    color: #070707;
+  }
+
+  .h16 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 14px;
+    color: #070707;
+  }
+
+  .h16-22 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #070707;
+    text-transform: capitalize;
+  }
+
+  .h12 {
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.4px;
+
+    color: #95959f;
+    text-transform: capitalize;
+  }
+
+  .category-title-h1 {
+    padding: 0;
+    text-align: left;
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    color: #070707;
+    padding: 0 10px;
+    padding-bottom: 14px;
+}
+
+  .button-upper{
+    text-transform: uppercase;
+  }
+
+  .content{
+    padding: 10px 0px;
+  }
+}
+
+@mixin static-page() {
+  .page-body {
+    width: 100%;
+    min-height: calc(100vh - 112px);
+
+    .content {
+      padding: 16px;
+      padding-top: 24px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      text-align: center;
+    }
+  }
+  img {
+    max-width: 100% !important;
+  }
+}
+
+@mixin form-buttons {
+  .buttons {
+    margin: 10px 0;
+    text-transform: uppercase;
+    width: 100%;
+    button {
+      max-width: 400px;
+      width: 100%;
+      text-transform: uppercase;
+    }
+    > div {
+      padding-top: 20px;
+    }
+  }
+}
+
+@mixin inline-form() {
+  .casino-form-wrapper {
+    #casino-form {
+      padding: 32px;
+      text-align: center;
+      //@include mat-elevation(16);
+
+      form {
+        width: 100%;
+        text-align: left;
+
+        mat-form-field {
+          width: 100%;
+        }
+      }
+      .buttons {
+        margin: 10px 0;
+        text-transform: uppercase;
+        text-align: center;
+
+        button {
+          max-width: 400px;
+          width: 100%;
+          text-transform: uppercase;
+        }
+        > div {
+          padding-top: 20px;
+        }
+      }
+    }
+    #loader {
+      position: absolute;
+    }
+  }
+}

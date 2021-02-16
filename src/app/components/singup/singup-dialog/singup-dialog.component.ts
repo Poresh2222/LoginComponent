@@ -58,7 +58,7 @@ export class SingupDialogComponent extends BasePageComponent {
   constructor(
     public dialogRef: MatDialogRef<SingupDialogComponent>,
     private router: Router,
-    @Inject(MAT_DIALOG_DATA) public data: SignUpDialogData ) {
+    @Inject(MAT_DIALOG_DATA) public _data: SignUpDialogData ) { //data or _data?
       super();
       router.events.pipe(
         filter((event: RouterEvent) => event instanceof NavigationStart),

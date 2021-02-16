@@ -1,1 +1,9 @@
-<p>stepper works!</p>
+<div class="stepper" fxLayoutAlign="center center">
+    <div class="stepper-wrapper" fxLayoutAlign="start center" fxLayout="row">
+        <div class="circle completed" [ngClass]="{'completed': stepNumber > 0, 'selected': stepNumber === 0}" fxLayoutAlign="center center"><span class="number">1</span><mat-icon class="icon">check</mat-icon></div>
+        <div class="rectangle"></div>
+        <div class="circle" [ngClass]="{'completed': stepNumber > 1, 'selected': stepNumber === 1}" fxLayoutAlign="center center"><span class="number">2</span><mat-icon class="icon">check</mat-icon></div>
+        <div class="rectangle"></div>
+        <div class="circle" [ngClass]="{'completed': stepNumber === 2}"><mat-icon class="icon">check</mat-icon></div>
+    </div>
+</div>

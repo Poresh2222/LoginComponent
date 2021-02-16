@@ -1,0 +1,32 @@
+@import "src/mixins";
+:host {
+    .dialog-wrapper {
+        height: 81%;
+        .dialog-container {
+            position: relative;
+            min-height: 100%;
+
+            .error-icon-container {
+                text-align: center;
+                width: 100%;
+                margin-top: 44px;
+                margin-bottom: 28px;
+            }
+
+            .content {
+                padding-bottom: 11px;
+
+                h2,p{
+                    text-align: center;
+                }
+            }
+
+            .footer {
+                position: absolute;
+                width: 100%;
+                bottom: 0px;
+                @include form-buttons();
+            }
+        }
+    }
+}

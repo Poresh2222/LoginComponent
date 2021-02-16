@@ -1,1 +1,32 @@
-<p>singup-form works!</p>
+<!-- <div id="loader" *ngIf="isLoading">
+    <mat-progress-spinner class="example-margin" color="primary" mode="indeterminate">
+    </mat-progress-spinner>
+</div> -->
+
+<!-- <ng-template #showstepper> -->
+    <div class="signup-wrapper"  >
+        <div class="registration-header" *ngIf="!isCompleted2">
+            <ng-container [ngSwitch]="selectedIndex">
+                <p *ngSwitchCase="0" i18n>account data</p>
+                <p *ngSwitchCase="1" i18n>user info</p>
+            </ng-container>
+        </div>
+        <!-- <mat-horizontal-stepper *ngIf="!isCompleted2" [selectedIndex]="selectedIndex" labelPosition="bottom"  [linear]="isLinear"  #stepper>
+            <mat-step [completed]="isCompleted1" [editable]="isEditable">
+                <app-signup-step-one (isCompleted)="completeStepOne($event)" [registrationFields]="fieldResponse1" [data]="this.cmsData?.signupCmsInfo">
+                </app-signup-step-one>
+            </mat-step>
+            <mat-step [completed]="isCompleted2" [editable]="isEditable" >
+                <app-signup-step-two (isCompleted)="completeStepTwo($event)" [registrationFields]="fieldResponse2" ></app-signup-step-two>
+            </mat-step>
+        </mat-horizontal-stepper> -->
+        <app-stepper [stepNumber]="selectedIndex"></app-stepper>
+
+        <app-signup-step-one *ngIf="!isCompleted1" (isCompleted)="completeStepOne($event)" [registrationFields]="fieldResponse1" [data]="this.cmsData?.signupCmsInfo">
+        </app-signup-step-one>
+
+        <app-signup-step-two *ngIf="isCompleted1 && !isCompleted2" (isCompleted)="completeStepTwo($event)" [registrationFields]="fieldResponse2" ></app-signup-step-two>
+
+        <app-signup-step-three *ngIf="isCompleted2" (isCompleted)="completeStepThree($event)" [content]="this.cmsData?.signupCmsInfo?.registrationComplete.safehtml"></app-signup-step-three>
+    </div>
+<!-- </ng-template> -->

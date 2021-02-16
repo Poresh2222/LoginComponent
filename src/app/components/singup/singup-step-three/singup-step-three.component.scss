@@ -1,0 +1,26 @@
+@import "src/mixins";
+:host {
+    @include static-page();
+    @include inline-form();
+    @include form-buttons();
+
+    .step-body {
+        height: 85%;
+        .success-icon-container {
+            text-align: center;
+            width: 100%;
+            // margin-top: 65px;
+            // margin-bottom: 28px;
+        }
+
+        .content {
+            h4 {
+                text-align: center !important;
+            }
+        }
+
+        .buttons {
+            width: 75%;
+        }
+    }
+}

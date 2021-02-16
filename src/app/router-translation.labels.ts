@@ -1,0 +1,1 @@
+export const termsTrx: string = 'info/terms-conditions';

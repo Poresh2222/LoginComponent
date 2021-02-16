@@ -1,1 +1,112 @@
-<p>singup-step-two works!</p>
+<div class="step-body" fxLayoutAdivgn="center center">
+  <div class="signup-2-form-wrapper">
+    <div id="signup-2-form">
+      <form name="registerForm2" [formGroup]="registerForm2" (ngSubmit)="onSubmit(registerForm2)">
+        <!-- <div fxLayout="column" fxLayoutAlign="center center">
+                    <mat-form-field appearance="outline">
+                        <mat-label i18n>your street address</mat-label>
+                        <input matInput type="text" formControlName="address_1" cdkFocusInitial>
+                        <mat-icon matSuffix>lock</mat-icon>
+                        <mat-error *ngIf="registerForm2.get('address_1')?.hasError('required')" i18n>
+                            Please enter your address.
+                        </mat-error>
+                        <mat-error *ngIf="registerForm2.get('address_1')?.hasError('pattern')" i18n>
+                            {{registerForm2.get('address_1').errors.pattern.msg}}
+                        </mat-error>
+                        <mat-error *ngIf="registerForm2.get('address_1')?.errors?.serverError">
+                            {{ registerForm2.get('address_1').errors?.serverError }}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center">
+                    <mat-form-field class="postal" appearance="outline">
+                        <mat-label i18n>postal</mat-label>
+                        <input matInput type="text" formControlName="postal_code">
+                        <mat-error *ngIf="registerForm2.get('postal_code')?.hasError('required')" i18n>
+                            Provide postal.
+                        </mat-error>
+                        <mat-error *ngIf="registerForm2.get('postal_code')?.hasError('maxlength')" i18n>
+                            Too long.
+                        </mat-error>
+                        <mat-error *ngIf="registerForm2.get('postal_code')?.hasError('pattern')" i18n>
+                            {{registerForm2.get('postal_code').errors.pattern.msg}}
+                        </mat-error>
+                        <mat-error *ngIf="registerForm2.get('postal_code')?.errors?.serverError">
+                            {{ registerForm2.get('postal_code').errors?.serverError }}
+                        </mat-error>
+                    </mat-form-field>
+                    <span fxFlex></span>
+                    <mat-form-field class="city" appearance="outline">
+                        <mat-label i18n>city</mat-label>
+                        <input matInput type="text" placeholder="city" formControlName="city">
+                        <mat-error *ngIf="registerForm2.get('city')?.hasError('required')" i18n>
+                            Please enter your city.
+                        </mat-error>
+                        <mat-error *ngIf="registerForm2.get('city')?.hasError('pattern')" i18n>
+                            {{registerForm2.get('city').errors.pattern.msg}}
+                        </mat-error>
+                        <mat-error *ngIf="registerForm2.get('address_1')?.errors?.serverError">
+                            {{ registerForm2.get('city').errors?.serverError }}
+                        </mat-error>
+                    </mat-form-field>
+
+                </div> -->
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <mat-form-field class="first-name" appearance="outline">
+            <mat-label i18n>first name</mat-label>
+            <input matInput type="text" formControlName="first_name">
+            <mat-error *ngIf="registerForm2.get('first_name')?.hasError('required')" i18n>PLease provide your first name.</mat-error>
+            <mat-error *ngIf="registerForm2.get('first_name')?.hasError('maxlength')" i18n>Too long.</mat-error>
+            <mat-error *ngIf="registerForm2.get('first_name')?.hasError('pattern')">
+              {{registerForm2.get('first_name').errors.pattern.msg}}
+            </mat-error>
+            <mat-error *ngIf="registerForm2.get('first_name')?.errors?.serverError">
+              {{ registerForm2.get('first_name').errors?.serverError }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <mat-form-field class="surname" appearance="outline">
+            <mat-label i18n>surname</mat-label>
+            <input matInput type="text" placeholder="surname" formControlName="last_name">
+            <mat-error *ngIf="registerForm2.get('last_name')?.hasError('required')" i18n>Please enter your surname.</mat-error>
+            <mat-error *ngIf="registerForm2.get('last_name')?.hasError('pattern')">
+              {{registerForm2.get('last_name').errors.pattern.msg}}
+            </mat-error>
+            <mat-error *ngIf="registerForm2.get('last_name')?.errors?.serverError">
+              {{ registerForm2.get('last_name').errors?.serverError }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
+          <mat-form-field fxFlex="20" class="currency" appearance="outline">
+            <mat-label i18n>currency</mat-label>
+            <select matNativeControl name="currency" formControlName="currency">
+              <option *ngFor="let currency of currencies" [value]="currency.value" [selected]="currency.value === 'PLN'">{{ currency.display }}</option>
+            </select>
+          </mat-form-field>
+          <mat-form-field fxFlex="80" class="country" appearance="outline">
+            <mat-label i18n>select country</mat-label>
+            <select matNativeControl name="country" formControlName="country">
+              <option *ngFor="let country of countries" [value]="country.value">{{ country.display }}
+              </option>
+            </select>
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="start center">
+          <mat-checkbox color="primary" formControlName="accept_terms"><span i18n>I am over 18 years old and I accept </span> &nbsp; &nbsp;<a [routerLink]="termsUrl" target="_blank" routerLinkActive="active" i18n>Terms & Conditions</a>
+          </mat-checkbox>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="start center">
+          <mat-checkbox color="primary" formControlName="marketing_consents" checked i18n>Send me info about new features & promotions</mat-checkbox>
+        </div>
+
+        <input type="hidden" formControlName="current_step" />
+
+        <div class="buttons">
+          <div><button mat-flat-button color="primary" type="submit" i18n>submit</button></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

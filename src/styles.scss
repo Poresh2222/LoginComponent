@@ -1,7 +1,6 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@import '~@angular/material/theming';
+@import "~@angular/material/theming";
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -9,31 +8,390 @@
 // Be sure that you only ever include this mixin once!
 @include mat-core();
 
+$mat-green: (
+  50: #e3f2fd,
+  100: #20716b,
+  200: #20716b,
+  300: #20716b,
+  400: #20716b,
+  500: #20716b,
+  600: #20716b,
+  700: #20716b,
+  800: #20716b,
+  900: #20716b,
+  A100: #20716b,
+  A200: #20716b,
+  A400: #20716b,
+  A700: #20716b,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ),
+);
+
+$mat-yellow: (
+  50: #e3f2fd,
+  100: #ffd36c,
+  200: #ffd36c,
+  300: #ffd36c,
+  400: #ffd36c,
+  500: #ffd36c,
+  600: #ffd36c,
+  700: #ffd36c,
+  800: #ffd36c,
+  900: #ffd36c,
+  A100: #ffd36c,
+  A200: #ffd36c,
+  A400: #ffd36c,
+  A700: #ffd36c,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ),
+);
+
+$mat-pink: (
+  50: #e3f2fd,
+  100: #fc3c6a,
+  200: #fc3c6a,
+  300: #fc3c6a,
+  400: #fc3c6a,
+  500: #fc3c6a,
+  600: #fc3c6a,
+  700: #fc3c6a,
+  800: #fc3c6a,
+  900: #fc3c6a,
+  A100: #fc3c6a,
+  A200: #fc3c6a,
+  A400: #fc3c6a,
+  A700: #fc3c6a,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ),
+);
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$LoginComponent-primary: mat-palette($mat-indigo);
-$LoginComponent-accent: mat-palette($mat-pink, A200, A100, A400);
+$casino-first-primary: mat-palette($mat-green);
+$casino-first-accent: mat-palette($mat-yellow);
 
 // The warn palette is optional (defaults to red).
-$LoginComponent-warn: mat-palette($mat-red);
+$casino-first-warn: mat-palette($mat-pink);
 
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
-$LoginComponent-theme: mat-light-theme((
-  color: (
-    primary: $LoginComponent-primary,
-    accent: $LoginComponent-accent,
-    warn: $LoginComponent-warn,
-  )
-));
+// Create the theme object (a Sass map containing all of the palettes).
+$casino-first-theme: mat-light-theme($casino-first-primary, $casino-first-accent, $casino-first-warn);
+// (
+//   color: (
+//     primary: $casino-first-primary,
+//     accent: $casino-first-accent,
+//     warn: $casino-first-warn,
+//   )
+// ));
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($LoginComponent-theme);
+@include angular-material-theme($casino-first-theme);
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family:  Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
+  background-color: #f2f2f2;
+}
+app-root {
+  margin: auto;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a:focus,
+img:focus,
+div:focus,
+button:focus,
+input:focus {
+  outline: none !important;
+}
+
+.center {
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    text-align: center;
+  }
+}
+.centered {
+  h4,
+  p {
+    text-align: center;
+  }
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  /* identical to box height, or 120% */
+
+  text-align: center;
+  letter-spacing: 0.15px;
+
+  color: #070707;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.white-icon {
+  color: white;
+}
+/* Note: If you're using an SVG icon, you should make the class target the `<svg>` element */
+.white-icon svg {
+  fill: white;
+}
+
+.content p {
+  margin-bottom: 0;
+}
+
+.mat-checkbox-layout {
+  white-space: normal !important;
+
+  .mat-checkbox-label {
+    font-size: 12px !important;
+    line-height: 16px !important;
+    color: #070707 !important;
+  }
+}
+
+.mat-grid-tile.game-tile {
+  background: none !important;
+}
+
+.fullPrimaryBackdropBackground {
+  background-color: mat-color($casino-first-primary) !important;
+}
+
+.cdk-overlay-pane {
+  position: relative !important;
+}
+
+mat-form-field {
+  .mat-form-field-wrapper {
+    padding-bottom: 18px;
+  }
+  width: 100%;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.sharp-left .mat-form-field-outline-start {
+  border-radius: 0 !important;
+}
+
+.open-right .mat-form-field-outline-end {
+  border-radius: 0 !important;
+  border-left-style: none !important;
+  border-right-style: none !important;
+}
+
+.game-launch-dialog .mat-dialog-container {
+  padding: 0;
+}
+
+.game-client-area-dialog .mat-dialog-container {
+  padding: 26px 10px;
+}
+
+span.error {
+  font-size: 10px;
+  color: red;
+}
+
+.mat-stepper-horizontal {
+  width: 100%;
+}
+
+.signup .mat-horizontal-content-container {
+  padding: 0px;
+}
+
+.swiper-slide {
+  overflow: hidden !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  display: none !important;
+}
+
+.deposit-value {
+  .mat-input-element {
+    font-size: 41px;
+  }
+}
+
+.withdrawal-value {
+  .mat-input-element {
+    font-size: 16px;
+  }
+}
+
+.mat-form-field-label {
+  text-transform: capitalize;
+}
+
+.game-dialog {
+  .mat-dialog-container {
+    padding: 0;
+    background-color: black;
+  }
+  .mat-dialog-content {
+    max-height: 100% !important;
+  }
+}
+
+.mat-white {
+  background-color: none;
+  color: #fff;
+
+  &.mat-stroked-button:not(.mat-button-disabled) {
+    border-color: rgba(256, 256, 256, 0.78);
+  }
+}
+
+.mat-blackbackground {
+  background-color: none;
+  color: #fff;
+
+  &.mat-stroked-button:not([disabled]) {
+    border-color: rgba(255, 255, 255, 0.52);
+  }
+}
+
+.mat-accent-white-background {
+  background-color: none;
+  color: #ffd36c;
+
+  &.mat-stroked-button:not([disabled]) {
+    border-color: rgba(255, 255, 255, 0.52);
+  }
+}
+
+.mat-primary-font {
+  color: #20716b !important;
+}
+
+.top-login-field {
+  .mat-form-field-wrapper {
+    padding: 0 !important;
+  }
+}
+
+.gray-header {
+  background-color: #e1e1e1 !important;
+}
+
+.chest-container {
+  transform: scale(1.5);
+}
+
+.coin-container {
+  position: absolute;
+  top: 30px;
+  left: -15px;
+  transform: scale(1.5);
+}
+
+.top-drawer,
+.top-drawer-initial {
+  .page-body {
+    min-height: auto !important;
+  }
+
+  .deposit-body {
+    min-height: auto !important;
+  }
+
+  .withdrawal-body {
+    min-height: auto !important;
+  }
+}
+
+.mat-progress-bar.mat-accent .mat-progress-bar-buffer {
+  background-color: #e0e0e0 !important;
+}
+
+.page-body {
+  .content {
+    h4 {
+      margin: 16px 0;
+      line-height: 1.3em;
+    }
+  }
+}
+
+.operator-swiper {
+  .swiper-wrapper {
+    margin-left: 12px !important;
+  }
+}
+// .mat-progress-bar-fill::after {
+
+// }
+// .mat-horizontal-stepper-header-container {
+//   padding-left: 60px;
+// }
+

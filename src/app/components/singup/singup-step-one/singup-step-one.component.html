@@ -1,1 +1,59 @@
-<p>singup-step-one works!</p>
+<div class="step-body" fxLayoutAdivgn="center center">
+    
+    <div class="step-teaser content" [innerHTML]="data?.firstStepTeaser?.safehtml"></div>
+    <div class="signup-2-form-wrapper">
+        <div id="signup-2-form">
+            <form name="registerForm1" [formGroup]="registerForm1" (ngSubmit)="onSubmit(registerForm1)">
+                <div fxLayout="column" fxLayoutAlign="center center">
+                    <!-- <mat-form-field appearance="outline">
+                        <mat-label i18n>enter your username</mat-label>
+                        <input matInput type="text" formControlName="login" cdkFocusInitial>
+                        <mat-error *ngIf="registerForm1.get('login')?.hasError('required')" i18n>
+                            Please enter your username.
+                        </mat-error>
+                        <mat-error *ngIf="registerForm1.get('login')?.hasError('minlength')" i18n>
+                            Username is too short.
+                        </mat-error>
+                        <mat-error *ngIf="registerForm1.get('login')?.hasError('maxlength')" i18n>
+                            Username is too long.
+                        </mat-error>
+                        <mat-error *ngIf="registerForm1.get('login')?.hasError('pattern')" i18n>
+                            {{registerForm1.get('login').errors.pattern.msg}}
+                        </mat-error>
+                        <mat-error *ngIf="registerForm1.get('login')?.errors?.serverError">
+                            {{ registerForm1.get('login').errors?.serverError }}
+                        </mat-error>
+                    </mat-form-field> -->
+                    <mat-form-field class="email" appearance="outline">
+                        <mat-label i18n>email</mat-label>
+                        <mat-error *ngIf="registerForm1.get('email')?.hasError('required')" i18n>Please enter your email.</mat-error>
+                        <mat-error *ngIf="registerForm1.get('email')?.hasError('email')" i18n>Please provide a valid email address.</mat-error>
+                        <mat-error *ngIf="registerForm1.get('email')?.errors?.serverError">
+                            {{ registerForm1.get('email').errors?.serverError }}
+                        </mat-error>
+                        <input matInput type="text" formControlName="email">
+                    </mat-form-field>
+                    <span fxFlex></span>
+                    <mat-form-field class="password" appearance="outline">
+                        <mat-label i18n>password</mat-label>
+                        <input matInput  [type]="hidePassword ? 'password' : 'text'"  formControlName="password">
+                        <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        <mat-error *ngIf="registerForm1.get('password')?.hasError('required')" i18n>Please enter your password.</mat-error>
+                        <mat-error *ngIf="registerForm1.get('password')?.hasError('minlength')" i18n>Your password is too short.</mat-error>
+                        <mat-error *ngIf="registerForm1.get('password')?.hasError('pattern')">
+                            {{registerForm1.get('password').errors.pattern.msg}}
+                        </mat-error>
+                        <mat-error *ngIf="registerForm1.get('password')?.errors?.serverError">
+                            {{ registerForm1.get('password').errors?.serverError }}
+                        </mat-error>
+                    </mat-form-field>
+                    <input type="hidden" formControlName="current_step" />
+                </div>
+
+                <div class="buttons">
+                    <div><button mat-flat-button color="primary" type="submit" i18n>submit</button></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

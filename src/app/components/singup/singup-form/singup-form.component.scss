@@ -1,0 +1,21 @@
+:host {
+    .signup-wrapper {
+        width: 100%;
+        height: 100%;
+
+        .registration-header {
+            width: 100%;
+            text-align: center;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            letter-spacing: 0.15px;
+            text-transform: capitalize;
+            color: rgba(7, 7, 7, 0.87);
+            height: 42px;
+            box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.12);
+            margin-bottom: 7px;
+        }
+    }
+}

@@ -1,1 +1,14 @@
-<p>singup-step-three works!</p>
+<div class="step-body"  fxLayoutAlign="space-evenly center" fxLayout="column">
+    <div class="success-icon-container" fxLayoutAlign="center center">
+        
+
+        
+    </div>
+    <div class="content centered" [innerHTML]="content">
+    </div>
+
+    <div class="buttons" fxLayoutAlign="center center" fxLayoutGap="20px" fxLayout="column">
+        <button mat-flat-button color="warn" type="submit" (click)="deposit()" i18n>log in</button>
+        <button mat-stroked-button color="primary" (click)="close()" type='button' i18n>close</button>
+    </div>
+</div>

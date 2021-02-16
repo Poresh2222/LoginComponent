@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,11 @@ import { SingupStepThreeComponent } from './components/singup/singup-step-three/
 import { StepperComponent } from './components/singup/stepper/stepper.component';
 import { LoginComponent } from './components/login/login/login.component';
 import { LoginDialogComponent } from './components/login/login-dialog/login-dialog.component';
+import { CloseDialogButtonComponent } from './components/dialog/close-dialog-button/close-dialog-button.component';
+import { ConfirmDialogComponent } from './components/dialog/confirm-dialog/confirm-dialog.component';
+import { ErrorDialogComponent } from './components/dialog/error-dialog/error-dialog.component';
+import { SuccessDialogComponent } from './components/dialog/success-dialog/success-dialog.component';
+import { StartpageComponent } from './components/startpage/startpage.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +31,20 @@ import { LoginDialogComponent } from './components/login/login-dialog/login-dial
     SingupStepThreeComponent,
     StepperComponent,
     LoginComponent,
-    LoginDialogComponent
+    LoginDialogComponent,
+    CloseDialogButtonComponent,
+    ConfirmDialogComponent,
+    ErrorDialogComponent,
+    SuccessDialogComponent,
+    StartpageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
     AngularMaterialModule,
   ],
   providers: [],
