@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DeviceDetectorService } from 'ngx-device-detector';
 
-export enum DEVICE_TYPE {
+export enum DEVICE_TYPE {   // { any , any }
   MOBILE,
   DESKTOP
 }
@@ -13,7 +13,7 @@ export class DetectDeviceService {
 
   constructor( private deviceService: DeviceDetectorService) { }
 
-  isDesktop() {
+  isDesktop() {   // detect platform
     return this.deviceService.isDesktop();
   }
 

@@ -14,7 +14,7 @@ import { ConfirmDialogComponent } from '../dialog/confirm-dialog/confirm-dialog.
   templateUrl: './base-page.component.html',
   styleUrls: ['./base-page.component.scss']
 })
-export class BasePageComponent extends BaseComponent {
+export class BasePageComponent extends BaseComponent { // component take information from user + *BaseComponent( void )
 
   protected _data: any;
 
@@ -32,7 +32,7 @@ export class BasePageComponent extends BaseComponent {
 
 }
 
-export type ConfirmationResponse = {
+export type ConfirmationResponse = { // 
   isConfirmed: boolean;
   data: any;
 }
@@ -40,7 +40,7 @@ export type ConfirmationResponse = {
 @Component({
   template: ''
 })
-export class BasePageComponentWithDialogs extends BasePageComponent {
+export class BasePageComponentWithDialogs extends BasePageComponent { // component + open dialogs functions + return data
 
   constructor(
     public errorDialog: MatDialog,
@@ -51,7 +51,7 @@ export class BasePageComponentWithDialogs extends BasePageComponent {
 
   }
 
-  openErrorDialog(msg?:string,title?:string): void {
+  openErrorDialog(msg?:string,title?:string): void {    // open dialog with size parametrs + data
     const size: DialogConfig = this.deviceDetectService.isDesktop() ? DESKTOP_SMALL :SMALL_DIALOG_CONFIG;
     const dialogRef = this.errorDialog.open(ErrorDialogComponent, {
       ...size,
@@ -69,15 +69,15 @@ export class BasePageComponentWithDialogs extends BasePageComponent {
     });
   }
 
-  openConfirmDialog(msg:string, dataToConfrim:any, callback:Function): void {
+  openConfirmDialog(msg:string, dataToConfrim:any, callback:Function): void {   //  open dialog with funktion name + extendet size parametrs
     const size: DialogConfig = this.deviceDetectService.isDesktop() ? CONFIRM_DIALOG_CONFIG :SMALL_DIALOG_CONFIG;
     const dialogRef = this.errorDialog.open(ConfirmDialogComponent, {
       ...size,
       panelClass: "transparent",
-      data: {msg:msg, dataRefToConfirm:dataToConfrim}
+      data: {msg:msg, dataRefToConfirm:dataToConfrim}   //  msg + any 
     });
 
-    dialogRef.afterClosed().pipe(takeUntil(this.unsubscribe)).subscribe(
+    dialogRef.afterClosed().pipe(takeUntil(this.unsubscribe)).subscribe(    //  clear + return data
       (resp:ConfirmationResponse) => {
         if (resp && resp.isConfirmed) {
           this.confirm(resp.data);

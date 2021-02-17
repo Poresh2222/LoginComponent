@@ -5,6 +5,7 @@ import { FormGroup } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 
 export const REGISTRATION: string = "/registration/"
+export const LOGIN_EMAIL_URL: string = "/user/login/?product_type=casino";
 
 @Injectable({
   providedIn: 'root'

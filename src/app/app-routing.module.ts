@@ -7,7 +7,12 @@ const routes: Routes = [
   {path: 'singup', component: SingupDialogRouteComponent}
 ];
 
+interface RouteTranslation {
+  [key: string]: string
+}
+
 export const HOST_NAME = new InjectionToken<string>('hostName');
+export const TRANSLATED_ROUTES = new InjectionToken<RouteTranslation>('translatedRoutes');
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
